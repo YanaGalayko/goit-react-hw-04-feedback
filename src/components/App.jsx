@@ -12,15 +12,15 @@ export const App = () => {
     neutral: 0,
     bad: 0,
   });
-
-  const { good, neutral, bad } = options;
-  const optionsKeys = Object.keys(options);
   
   const onLeaveFeedback = option => {
     setOptions(prevOptions => {
       return { ...prevOptions, [option]: prevOptions[option] + 1 };
     });
   };
+
+  const { good, neutral, bad } = options;
+  const optionsKeys = Object.keys(options);
 
   const countTotalFeedback = () => {
     return good + neutral + bad;
